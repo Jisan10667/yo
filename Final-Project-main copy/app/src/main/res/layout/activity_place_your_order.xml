@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blueish"
     tools:context=".PlaceYourOrderActivity"
         >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <TextView android:id="@+id/tvCustomerDetails"
@@ -19,6 +20,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="10dp"
             android:text="Customer Details"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -28,18 +30,20 @@
             app:layout_constraintEnd_toStartOf="@+id/switchDelivery"
            app:layout_constraintTop_toBottomOf="@+id/tvCustomerDetails"
             android:text="Pickup"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchDelivery"
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchDelivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCustomerDetails"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCustomerDetails"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView android:id="@+id/tvDelivery"
             android:layout_width="wrap_content"
@@ -47,20 +51,22 @@
             app:layout_constraintStart_toEndOf="@+id/switchDelivery"
             app:layout_constraintTop_toBottomOf="@+id/tvCustomerDetails"
             android:text="Delivery"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
-        <EditText android:id="@+id/inputName"
+        <EditText
+            android:id="@+id/inputName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/switchDelivery"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
-            android:layout_marginBottom="05dp"
-            android:hint="Enter your name"/>
+            android:layout_marginEnd="10dp"
+            android:hint="Enter your name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/switchDelivery"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText android:id="@+id/inputAddress"
             android:layout_width="match_parent"
@@ -73,7 +79,8 @@
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
             android:hint="Enter your address"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:inputType="text" />
 
         <EditText android:id="@+id/inputCity"
             android:layout_width="match_parent"
@@ -124,50 +131,54 @@
             app:layout_constraintTop_toBottomOf="@+id/inputZip"
             android:layout_margin="10dp"
             android:text="Card Details"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
-        <EditText android:id="@+id/inputCardNumber"
+        <EditText
+            android:id="@+id/inputCardNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvCardDetails"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
-            android:layout_marginBottom="05dp"
+            android:layout_marginEnd="10dp"
             android:hint="Enter Card Number"
             android:inputType="number"
-            android:maxLength="16"/>
+            android:maxLength="16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCardDetails"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <EditText android:id="@+id/inputCardExpiry"
+        <EditText
+            android:id="@+id/inputCardExpiry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/inputCardNumber"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
-            android:layout_marginBottom="05dp"
+            android:layout_marginEnd="10dp"
             android:hint="Enter Card expiry(mm/yyyy)"
-            android:inputType="number"
-            android:maxLength="6"/>
+            android:inputType="date"
+            android:maxLength="6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputCardNumber"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <EditText android:id="@+id/inputCardPin"
+        <EditText
+            android:id="@+id/inputCardPin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/inputCardExpiry"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
-            android:layout_marginBottom="05dp"
+            android:layout_marginEnd="10dp"
             android:hint="Enter Card pin(3 digits)"
             android:inputType="number"
-            android:maxLength="3"/>
+            android:maxLength="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputCardExpiry"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView android:id="@+id/tvTotalItems"
             android:layout_width="wrap_content"
@@ -177,6 +188,7 @@
             app:layout_constraintTop_toBottomOf="@+id/inputCardPin"
             android:layout_margin="10dp"
             android:text="Total items in cart"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -196,6 +208,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cartItemsRecyclerView"
             android:layout_margin="10dp"
             android:text="Sub total"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -216,6 +229,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvSubtotal"
             android:layout_margin="10dp"
             android:text="Delivery Charge"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -236,6 +250,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvDeliveryCharge"
             android:layout_margin="10dp"
             android:text="Total"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -256,12 +271,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTotal"
             android:text="Place your order"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             android:gravity="center"
             android:padding="10dp"
             android:layout_margin="10dp"
-            android:background="@drawable/button_bg"
+            android:background="@drawable/btn_green"
             />
 
 
