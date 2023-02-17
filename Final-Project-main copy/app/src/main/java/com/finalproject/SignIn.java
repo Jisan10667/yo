@@ -32,6 +32,7 @@ public class SignIn extends AppCompatActivity {
 
     ConstraintLayout bgimage;
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
